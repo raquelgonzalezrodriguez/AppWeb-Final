@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> FRONTEND ADMIN </title>
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+<body> 
+<header>
+        <div class="navbar">
+            <div class="navbar-left">
+                <span class="logo">CAMPUSBUS</span>
+            </div>
+            <div class="navbar-right">
+                <span class="profile-icon" onclick="redirectToUserDatosPage()">&#128100;</span>
+            </div>
+        </div>
+</header>
+<div class="paralelo">
+    <div class="form-wrapper">
+        <h1 class="form-title"></h1>
+        <div class="form-container">
+            <input type="submit" onclick="redirectToLineasPage()" value="LINEAS">
+        </div>
+    </div> 
+    <div class="form-wrapper">
+        <h1 class="form-title"></h1>
+        <div class="form-container">
+            <input type="submit" onclick="redirectToRutinasPage()" value="RUTINAS">
+        </div>
+    </div> 
+</div>
+<div class="paralelo">
+    <div class="form-wrapper">
+        <h1 class="form-title"></h1>
+        <div class="form-container">
+            <input type="submit" onclick="redirectToAutobusesPage()" value="AUTOBUSES">
+        </div>
+    </div> 
+    <div class="form-wrapper">
+        <h1 class="form-title"></h1>
+        <div class="form-container">
+            <input type="submit" onclick="redirectToConductoresPage()" value="CONDUCTORES">
+        </div>
+    </div> 
+</div>   
+    <div class="form-wrapper">
+        <h1 class="form-title"></h1>
+        <div class="form-container">
+            <input type="submit" onclick="redirectToViajesPage()" value="VIAJES">
+        </div>
+    </div> 
+    
+
+    <script src ="admin.js"></script>
+</body>
+</html>

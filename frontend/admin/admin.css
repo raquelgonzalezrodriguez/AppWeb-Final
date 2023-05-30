@@ -1,0 +1,137 @@
+body {
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-image: url('../user/fondouser.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+}
+
+header {
+    background-color: #cecece;
+    padding: 10px;
+    width: 100%;
+    height: 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left {
+    flex: 0;
+}
+
+.navbar-right {
+    flex: 0.1;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.profile-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.back-icon {
+    font-size: 34px;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.paralelo {
+    display: flex;
+}
+
+.form-wrapper {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 50px;
+}
+
+.form-wrapper2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+
+.form-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 350px;
+    margin: 0 auto;
+
+}
+.form-container2 {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 800px;
+    margin: 0 auto;
+    /*display: none;*/
+
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container select {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+}
+
+.form-container input[type="submit"] {
+    background-color: #2fa133;
+    color: white;
+    border: none;
+    width: 97%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+p {
+    margin-top: 10px;
+}

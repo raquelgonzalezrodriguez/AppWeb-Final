@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> FRONTEND USER </title>
+    <link rel="stylesheet" href="user.css">
+
+</head>
+<body>  
+    <header>
+        <div class="navbar">
+            <div class="navbar-left">
+                <span class="logo">CAMPUSBUS</span>
+            </div>
+            <div class="navbar-right">
+                <span class="profile-icon" onclick="redirectToUserDatosPage()">&#128100;</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="form-wrapper">
+        <h1 class="form-title"> Reservar lanzadera</h1>
+        <div class="form-container">
+            <form id="postReserva">
+                <label for="idlinea"> Origen - Destino:</label>
+                <select id="ID_LINEAS"></select>
+                <label for="hora">Hora:</label>
+                <select id="HORA"></select>
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="FECHA" />
+                <label for="tipo_asiento">Tipo de asiento:</label>
+                <select id="TIPO_ASIENTO"></select>
+                <br />
+                <input type="submit" value="Crear reserva" />
+            </form> 
+            <p id="textoPostReserva"></p>
+        </div>
+    </div>    
+    <div class="form-wrapper">
+        <h1 class="form-title"></h1>
+        <div class="form-container">
+            <input type="submit" onclick="redirectToReservasPage()" value="Ver mis reservas">
+        </div>
+    </div> 
+
+
+    <script src ="user.js"></script>
+</body>
+</html>

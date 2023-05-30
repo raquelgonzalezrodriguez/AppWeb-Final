@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> FRONTEND USER </title>
+    <link rel="stylesheet" href="user.css">
+
+</head>
+<body>  
+  <header>
+    <div class="navbar">
+        <div class="navbar-left">
+            <span class="logo">Datos personales</span>
+        </div>
+        <div class="navbar-right">
+          <span class="back-icon" onclick="redirectToUserPage()">&larr;</span>
+        </div>
+    </div>
+  </header>
+  <br />
+  <div class="paralelo">
+    <div class="form-wrapper">
+      <h1 class="form-title"> Ver / Eliminar </h1>
+      <div class="form-container">        
+        <div class="datos-personales">
+            <form id="getEstudiante">
+              <input type="submit" value="Ver datos" />
+            </form>
+            <form id="deleteEstudiante">
+              <input type="submit" value="Eliminar cuenta" />
+            </form>
+          </div>
+          <p id="textoGetEstudiante"></p>
+          <p id="textoDeleteEstudiante"></p>
+        </div>
+    </div>
+      
+      <div class="form-wrapper">
+        <h1 class="form-title">Actualizar</h1>
+        <div class="form-container">
+          <form id="putEstudiante">
+              <label for="nombre">Nombre: </label>
+              <input type="text" name="nombre" id="NOMBRE" />
+              <label for="email">Email: </label>
+              <input type="text" name="email" id="EMAIL" />
+              <label for="password">Contraseña: </label>
+              <input type="text" name="password" id="CONTRASEÑA" />
+              <label for="telefono">Telefono:</label>
+              <input type="text" name="telefono" id="TELEFONO" />
+              <label for="asiento_defecto">Asiento por defecto:</label>
+              <select id="ASIENTO_DEFECTO"></select>
+              <br />
+              <input type="submit" value="Actualizar" />
+          </form> 
+          <p id="textoPutEstudiante"></p>
+        </div>
+      </div>
+  </div> 
+    <script src ="user-datospersonales.js"></script>
+</body>
+</html>

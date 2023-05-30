@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> FRONTEND ADMIN </title>
+</head>
+<body> 
+    <div>
+        <h2>Conductor</h2>
+        <form id="getConductor">
+            <label>GET: </label>
+            <br />
+            <label for="idConductorGet">ID-Conductor</label>
+            <select id="ID_CONDUCTORES_GET_CONDUCTOR"></select>
+            <input type="submit" value="Enviar" />
+        </form> 
+        <form id="getConductores">
+            <input type="submit" value="Ver todos los conductores" />
+          </form>
+        <p id="textoGetConductor"></p>
+        <p id="textoGetConductores"></p>
+    </div>
+    <div>
+        <form id="postConductor">
+            <label>POST: </label>
+            <br />
+            <label for="id_conductor">ID-Conductor</label>
+            <input type="text" name="id_conductor" id="ID_CONDUCTOR" />
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="NOMBRE" />
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoPostConductor"></p>
+    </div>
+    <div>
+        <form id="putConductor">
+            <label>PUT: </label>
+            <br />
+            <label for="id_conductor">ID-Conductor</label>
+            <select id="ID_CONDUCTORES_PUT_CONDUCTOR"></select>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="NOMBRE" />
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoPutConductor"></p>
+    </div>
+    <div>
+        <form id="deleteConductor">
+            <label>DELETE: </label>
+            <br />
+            <label for="id_conductor">ID-Conductor</label>
+            <select id="ID_CONDUCTORES_DELETE_CONDUCTOR"></select>
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoDeleteConductor"></p>
+    </div>
+
+    <script src ="admin.js"></script>
+</body>
+</html>

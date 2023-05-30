@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> FRONTEND ADMIN </title>
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+<body> 
+    <header>
+        <div class="navbar">
+            <div class="navbar-left">
+                <span class="logo">CAMPUSBUS</span>
+            </div>
+            <div class="navbar-right">
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="form-wrapper">
+        <h1 class="form-title">VIAJES</h1>
+        <div class="form-container">
+            <form id="getViajes">
+                <input type="submit" value="Ver todos los viajes" />
+            </form>
+            <p id="textoGetViajes"></p>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="form-wrapper2">
+        <h1 class="form-title">RUTINAS</h1>
+        <div class="form-container2">
+        
+        <div class="paralelo">
+            <div class="form-wrapper">
+                <h1 class="form-title"> Obtener </h1>
+                <div class="form-container">
+                    <form id="getRutina">
+                        <label for="idLineaRutina">ID-Rutina</label>
+                        <select id="ID_RUTINAS_GET_RUTINA"></select>
+                        <input type="submit" value="Ver" />
+                    </form> 
+                    <form id="getRutinas">
+                        <input type="submit" value="Ver todas las rutinas" />
+                    </form>
+                    <p id="textoGetRutina"></p>
+                    <p id="textoGetRutinas"></p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <h1 class="form-title"> Eliminar </h1>
+                <div class="form-container">
+                    <form id="deleteRutina">
+                        <label for="id_rutina">ID-Rutina:</label>
+                        <select id="ID_RUTINAS_DELETE_RUTINA"></select>
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoDeleteRutina"></p>
+                </div>
+            </div>
+        </div>
+        <div class="paralelo">
+            <div class="form-wrapper">
+                <h1 class="form-title"> Crear </h1>
+                <div class="form-container">
+                    <form id="postRutina">
+                        <label for="id_linea">ID-Linea:</label>
+                        <select id="ID_LINEAS_POST_RUTINA"></select>
+                        <label for="hora">Hora:</label>
+                        <select id="HORA_SALIDA_POST_RUTINA"></select>
+                        <label for="id_autobus">ID-Autobus:</label>
+                        <select id="ID_AUTOBUS_POST_RUTINA"></select>
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoPostRutina"></p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <h1 class="form-title"> Actualizar </h1>
+                <div class="form-container">
+                    <form id="putRutina">
+                        <label for="id_rutina">ID-Rutina:</label>
+                        <select id="ID_RUTINAS_PUT_RUTINA"></select>
+                        <label for="id_linea">ID-Linea:</label>
+                        <select id="ID_LINEAS_PUT_RUTINA"></select>
+                        <label for="hora">Hora:</label>
+                        <select id="HORA_SALIDA_PUT_RUTINA"></select>
+                        <label for="id_autobus">ID-Autobus:</label>
+                        <select id="ID_AUTOBUS_PUT_RUTINA"></select>
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoPutRutina"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <br />
+
+
+    <div class="form-wrapper2">
+        <h1 class="form-title"> LINEAS </h1>
+        <div class="form-container2">
+        <div class="paralelo">
+            <div class="form-wrapper">
+                <h1 class="form-title"> Obtener </h1>
+                <div class="form-container">
+                    <form id="getLinea">
+                        <label for="idLineaGet">ID-Linea</label>
+                        <select id="ID_LINEAS_GET_LINEA"></select>
+                        <input type="submit" value="Ver" />
+                    </form> 
+                    <form id="getLineas">
+                        <input type="submit" value="Ver todas las lineas" />
+                    </form>
+                    <p id="textoGetLinea"></p>
+                    <p id="textoGetLineas"></p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <h1 class="form-title"> Eliminar </h1>
+                <div class="form-container">
+                        <form id="deleteLinea">
+                            <label for="id_linea">ID-Linea</label>
+                            <select id="ID_LINEAS_DELETE_LINEA"></select>
+                            <input type="submit" value="Enviar" />
+                        </form> 
+                        <p id="textoDeleteLinea"></p>
+                </div>
+            </div>
+        </div>
+        <div class="paralelo">
+            <div class="form-wrapper">
+                <h1 class="form-title"> Crear </h1>
+                <div class="form-container">
+                    <form id="postLinea">
+                        <label for="id_linea">ID-Linea</label>
+                        <input type="text" name="id_linea" id="ID_LINEA" />
+                        <label for="origen">Origen</label>
+                        <input type="text" name="origen" id="ORIGEN" />
+                        <label for="destino">Destino</label>
+                        <input type="text" name="destino" id="DESTINO" />
+                        <label for="frecuencia">Frecuencia(min)</label>
+                        <input type="int" name="frecuencia" id="FRECUENCIA" />
+                        <label for="hora_inicio">Hora de inicio</label>
+                        <input type="time" name="hora_inicio" id="HORA_INICIO" />
+                        <label for="hora_fin">Hora de fin</label>
+                        <input type="time" name="hora_fin" id="HORA_FIN" />
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoPostLinea"></p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <h1 class="form-title"> Actualizar </h1>
+                <div class="form-container">
+                    <form id="putLinea">
+                        <label for="id_linea">ID-Linea</label>
+                        <select id="ID_LINEAS_PUT_LINEA"></select>
+                        <label for="origen">Origen</label>
+                        <input type="text" name="origen" id="ORIGEN" />
+                        <label for="destino">Destino</label>
+                        <input type="text" name="destino" id="DESTINO" />
+                        <label for="frecuencia">Frecuencia(min)</label>
+                        <input type="int" name="frecuencia" id="FRECUENCIA" />
+                        <label for="hora_inicio">Hora de inicio</label>
+                        <input type="time" name="hora_inicio" id="HORA_INICIO" />
+                        <label for="hora_fin">Hora de fin</label>
+                        <input type="time" name="hora_fin" id="HORA_FIN" />
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoPutLinea"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+    <br />
+
+    <div class="form-wrapper2">
+        <h1 class="form-title"> AUTOBUSES </h1>
+        <div class="form-container2">
+        <div class="paralelo">
+            <div class="form-wrapper">
+                <h1 class="form-title"> Obtener </h1>
+                <div class="form-container">
+                    <form id="getAutobus">
+                        <label for="idAutobusGet">ID-Autobus</label>
+                        <select id="ID_AUTOBUSES_GET_AUTOBUS"></select>
+                        <input type="submit" value="Ver autobus" />
+                    </form> 
+                    <form id="getAutobusesXlinea">
+                        <label for="idLineaGet">ID-Linea</label>
+                        <select id="ID_LINEAS_GET_AUTOBUS"></select>
+                        <input type="submit" value="Ver los autobuses de esta linea" />
+                    </form> 
+                    <form id="getAutobuses">
+                        <input type="submit" value="Ver todos los autobuses" />
+                    </form>
+                    <p id="textoGetAutobus"></p>
+                    <p id="textoGetAutobuses"></p>
+                    <p id="textoGetAutobusesXlinea"></p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <h1 class="form-title"> Eliminar </h1>
+                <div class="form-container">
+                    <form id="deleteAutobus">
+                        <label for="id_autobus">ID-Autobus:</label>
+                        <select id="ID_AUTOBUSES_DELETE_AUTOBUS"></select>
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoDeleteAutobus"></p>
+                </div>
+            </div>
+        </div>
+        <div class="paralelo">
+            <div class="form-wrapper">
+                <h1 class="form-title"> Crear </h1>
+                <div class="form-container">
+                    <form id="postAutobus">
+                        <label for="id_autobus">ID-Autobus</label>
+                        <input type="text" name="id_autobus" id="ID_AUTOBUS" />
+                        <label for="id_linea">ID-Linea</label>
+                        <select id="ID_LINEAS_POST_AUTOBUS"></select>
+                        <label for="id_conductor">ID-Conductor</label>
+                        <select id="ID_CONDUCTORES_POST_AUTOBUS"></select>
+                        <label for="tipo-motor">Tipo motor </label>
+                        <select id="TIPO_MOTOR_POST_AUTOBUS"></select>
+                        <label for="n_asientos">Numero de asientos</label>
+                        <input type="int" name="n_asientos" id="N_ASIENTOS" />
+                        <label for="n_asientos_esp">Numero de asientos especiales</label>
+                        <input type="int" name="n_asientos_esp" id="N_ASIENTOS_ESPECIALES" />
+                        <label for="n_asientos_sr">Numero de asientos silla de ruedas</label>
+                        <input type="int" name="n_asientos_sr" id="N_ASIENTOS_SR" />
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoPostAutobus"></p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <h1 class="form-title"> Actualizar </h1>
+                <div class="form-container">
+                    <form id="putAutobus">
+                        <label for="id_autobus">ID-Autobus</label>
+                        <select id="ID_AUTOBUSES_PUT_AUTOBUS"></select>
+                        <label for="id_linea">ID-Linea</label>
+                        <select id="ID_LINEAS_PUT_AUTOBUS"></select>
+                        <label for="id_conductor">ID-Conductor</label>
+                        <select id="ID_CONDUCTORES_PUT_AUTOBUS"></select>
+                        <label for="tipo-motor">Tipo motor</label>
+                        <select id="TIPO_MOTOR_PUT_AUTOBUS"></select>
+                        <label for="n_asientos">Numero de asientos</label>
+                        <input type="int" name="n_asientos" id="N_ASIENTOS" />
+                        <label for="n_asientos_esp">Numero de asientos especiales</label>
+                        <input type="int" name="n_asientos_esp" id="N_ASIENTOS_ESPECIALES" />
+                        <label for="n_asientos_sr">Numero de asientos silla de ruedas</label>
+                        <input type="int" name="n_asientos_sr" id="N_ASIENTOS_SR" />
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoPutAutobus"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <br />
+
+
+    <div class="form-wrapper2">
+        <h1 class="form-title"> CONDUCTORES </h1>
+        <div class="form-container2">
+        <div class="paralelo">
+            <div class="form-wrapper">
+                <h1 class="form-title"> Obtener </h1>
+                <div class="form-container">
+                    <form id="getConductor">
+                        <label for="idConductorGet">ID-Conductor</label>
+                        <select id="ID_CONDUCTORES_GET_CONDUCTOR"></select>
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <form id="getConductores">
+                        <input type="submit" value="Ver todos los conductores" />
+                    </form>
+                    <p id="textoGetConductor"></p>
+                    <p id="textoGetConductores"></p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <h1 class="form-title"> Eliminar </h1>
+                <div class="form-container">
+                    <form id="deleteConductor">
+                        <label for="id_conductor">ID-Conductor</label>
+                        <select id="ID_CONDUCTORES_DELETE_CONDUCTOR"></select>
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoDeleteConductor"></p>
+                </div>
+            </div>
+        </div>
+        <div class="paralelo">
+            <div class="form-wrapper">
+                <h1 class="form-title"> Crear </h1>
+                <div class="form-container">
+                    <form id="postConductor">
+                        <label for="id_conductor">ID-Conductor</label>
+                        <input type="text" name="id_conductor" id="ID_CONDUCTOR" />
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="NOMBRE" />
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoPostConductor"></p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <h1 class="form-title"> Actualizar </h1>
+                <div class="form-container">
+                    <form id="putConductor">
+                        <label for="id_conductor">ID-Conductor</label>
+                        <select id="ID_CONDUCTORES_PUT_CONDUCTOR"></select>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="NOMBRE" />
+                        <input type="submit" value="Enviar" />
+                    </form> 
+                    <p id="textoPutConductor"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src ="admin.js"></script>
+    <script>
+
+
+    </script>
+</body>
+</html>

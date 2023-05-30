@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> FRONTEND ADMIN </title>
+</head>
+<body> 
+    <div>
+        <h2>Autobus</h2>
+        <form id="getAutobus">
+            <label>GET: </label>
+            <br />
+            <label for="idAutobusGet">ID-Autobus</label>
+            <select id="ID_AUTOBUSES_GET_AUTOBUS"></select>
+            <input type="submit" value="Ver autobus" />
+        </form> 
+        <form id="getAutobusesXlinea">
+            <label for="idLineaGet">ID-Linea</label>
+            <select id="ID_LINEAS_GET_AUTOBUS"></select>
+            <input type="submit" value="Ver los autobuses de esta linea" />
+        </form> 
+        <form id="getAutobuses">
+            <input type="submit" value="Ver todos los autobuses" />
+        </form>
+        <p id="textoGetAutobus"></p>
+        <p id="textoGetAutobuses"></p>
+        <p id="textoGetAutobusesXlinea"></p>
+    </div>
+    <div>
+        <form id="postAutobus">
+            <label>POST: </label>
+            <br />
+            <label for="id_autobus">ID-Autobus</label>
+            <input type="text" name="id_autobus" id="ID_AUTOBUS" />
+            <label for="id_linea">ID-Linea</label>
+            <select id="ID_LINEAS_POST_AUTOBUS"></select>
+            <label for="id_conductor">ID-Conductor</label>
+            <select id="ID_CONDUCTORES_POST_AUTOBUS"></select>
+            <label for="tipo-motor">Tipo motor </label>
+            <select id="TIPO_MOTOR_POST_AUTOBUS"></select>
+            <label for="n_asientos">Numero de asientos</label>
+            <input type="int" name="n_asientos" id="N_ASIENTOS" />
+            <label for="n_asientos_esp">Numero de asientos especiales</label>
+            <input type="int" name="n_asientos_esp" id="N_ASIENTOS_ESPECIALES" />
+            <label for="n_asientos_sr">Numero de asientos silla de ruedas</label>
+            <input type="int" name="n_asientos_sr" id="N_ASIENTOS_SR" />
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoPostAutobus"></p>
+    </div>
+    <div>
+        <form id="putAutobus">
+            <label>PUT: </label>
+            <br />
+            <label for="id_autobus">ID-Autobus</label>
+            <select id="ID_AUTOBUSES_PUT_AUTOBUS"></select>
+            <label for="id_linea">ID-Linea</label>
+            <select id="ID_LINEAS_PUT_AUTOBUS"></select>
+            <label for="id_conductor">ID-Conductor</label>
+            <select id="ID_CONDUCTORES_PUT_AUTOBUS"></select>
+            <label for="tipo-motor">Tipo motor</label>
+            <select id="TIPO_MOTOR_PUT_AUTOBUS"></select>
+            <label for="n_asientos">Numero de asientos</label>
+            <input type="int" name="n_asientos" id="N_ASIENTOS" />
+            <label for="n_asientos_esp">Numero de asientos especiales</label>
+            <input type="int" name="n_asientos_esp" id="N_ASIENTOS_ESPECIALES" />
+            <label for="n_asientos_sr">Numero de asientos silla de ruedas</label>
+            <input type="int" name="n_asientos_sr" id="N_ASIENTOS_SR" />
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoPutAutobus"></p>
+    </div>
+    <div>
+        <form id="deleteAutobus">
+            <label>DELETE: </label>
+            <br />
+            <label for="id_autobus">ID-Autobus:</label>
+            <select id="ID_AUTOBUSES_DELETE_AUTOBUS"></select>
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoDeleteAutobus"></p>
+    </div>
+
+    <script src ="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> FRONTEND ADMIN </title>
+</head>
+<body> 
+    <div>
+        <h2>Linea</h2>
+        <form id="getLinea">
+            <label>GET: </label>
+            <br />
+            <label for="idLineaGet">ID-Linea</label>
+            <select id="ID_LINEAS_GET_LINEA"></select>
+            <input type="submit" value="Ver" />
+        </form> 
+        <form id="getLineas">
+            <input type="submit" value="Ver todas las lineas" />
+          </form>
+        <p id="textoGetLinea"></p>
+        <p id="textoGetLineas"></p>
+    </div>
+    <div>
+        <form id="postLinea">
+            <label>POST: </label>
+            <br />
+            <label for="id_linea">ID-Linea</label>
+            <input type="text" name="id_linea" id="ID_LINEA" />
+            <label for="origen">Origen</label>
+            <input type="text" name="origen" id="ORIGEN" />
+            <label for="destino">Destino</label>
+            <input type="text" name="destino" id="DESTINO" />
+            <label for="frecuencia">Frecuencia(min)</label>
+            <input type="int" name="frecuencia" id="FRECUENCIA" />
+            <label for="hora_inicio">Hora de inicio</label>
+            <input type="time" name="hora_inicio" id="HORA_INICIO" />
+            <label for="hora_fin">Hora de fin</label>
+            <input type="time" name="hora_fin" id="HORA_FIN" />
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoPostLinea"></p>
+    </div>
+    <div>
+        <form id="putLinea">
+            <label>PUT: </label>
+            <br />
+            <label for="id_linea">ID-Linea</label>
+            <select id="ID_LINEAS_PUT_LINEA"></select>
+            <label for="origen">Origen</label>
+            <input type="text" name="origen" id="ORIGEN" />
+            <label for="destino">Destino</label>
+            <input type="text" name="destino" id="DESTINO" />
+            <label for="frecuencia">Frecuencia(min)</label>
+            <input type="int" name="frecuencia" id="FRECUENCIA" />
+            <label for="hora_inicio">Hora de inicio</label>
+            <input type="time" name="hora_inicio" id="HORA_INICIO" />
+            <label for="hora_fin">Hora de fin</label>
+            <input type="time" name="hora_fin" id="HORA_FIN" />
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoPutLinea"></p>
+    </div>
+    <div>
+        <form id="deleteLinea">
+            <label>DELETE: </label>
+            <br />
+            <label for="id_linea">ID-Linea</label>
+            <select id="ID_LINEAS_DELETE_LINEA"></select>
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoDeleteLinea"></p>
+    </div>
+
+    <script src ="admin.js"></script>
+</body>
+</html>

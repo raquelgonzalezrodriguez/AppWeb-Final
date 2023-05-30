@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Inicio Sesion </title>
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body> 
+    <div class="form-wrapper">
+        <h1 class="form-title">CREAR CUENTA</h1>
+        <div class="form-container">
+            <form id="postEstudiante">
+                <label for="id_estudiante">DNI:</label>
+                <input type="text" name="id_estudiante" id="ID_ESTUDIANTE" />
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="NOMBRE" />
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="EMAIL" />
+                <label for="password">Contraseña:</label>
+                <input type="text" name="password" id="CONTRASEÑA" />
+                <label for="confirm_password">Repetir contraseña:</label>
+                <input type="text" name="confirm_password" id="CONFIRM_CONTRASEÑA" />
+                <label for="telefono">Teléfono:</label>
+                <input type="text" name="telefono" id="TELEFONO" />
+                <label for="asiento_defecto">Asiento por defecto:</label>
+                <select id="ASIENTO_DEFECTO"></select>
+                <input type="submit" value="Registrarme" />
+            </form>
+            <p id="textoPostEstudiante"></p>
+        </div>
+    </div>
+    
+
+    <script src ="registro.js"></script>
+</body>
+</html>

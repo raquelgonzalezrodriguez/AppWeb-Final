@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> FRONTEND USER </title>
+    <link rel="stylesheet" href="user.css">
+
+</head>
+<body>  
+    <header>
+        <div class="navbar">
+            <div class="navbar-left">
+                <span class="logo">Mis reservas</span>
+            </div>
+            <div class="navbar-right">
+                <span class="back-icon" onclick="redirectToUserPage()">&larr;</span>
+            </div>
+        </div>
+    </header>
+<div class="paralelo">
+    <div class="form-wrapper">
+        <h1 class="form-title"></h1>
+        <div class="form-container"> 
+            <form id="getReservas">
+                <input type="submit" value="Ver reservas" />
+            </form> 
+            <p id="textoGetReserva"></p>
+        </div>
+    </div>
+
+    <div class="form-wrapper">
+        <h1 class="form-title"></h1>
+        <div class="form-container">         
+            <form id="getHistoricoReservas">
+                <input type="submit" value="Ver reservas vencidas" />
+            </form> 
+            <p id="textoGetHistoricoReservas"></p>
+        </div>
+    </div>
+</div>
+
+<div class="paralelo">
+
+    <div class="form-wrapper">
+        <h1 class="form-title">Eliminar reserva</h1>
+        <div class="form-container">                 
+            <form id="deleteReserva">
+                <label for="idreserva">ID-Reserva: </label>
+                <select id="ID_RESERVA_DELETE"></select>
+                <input type="submit" value="Eliminar" />
+            </form> 
+            <p id="textoDeleteReserva"></p>
+        </div>
+    </div>
+    
+    <div class="form-wrapper">
+        <h1 class="form-title">Modificar reserva</h1>
+        <div class="form-container">         
+            <form id="putReserva">
+                <label for="id_reserva">ID-Reserva:</label>
+                <select id="ID_RESERVA_PUT"></select>
+                <label for="hora">Hora:</label>
+                <select id="HORA_PUT"></select>
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="FECHA_PUT" />
+                <label for="tipo_asiento">Tipo de asiento:</label>
+                <select id="TIPO_ASIENTO_PUT"></select>
+                <input type="submit" value="Actualizar" />
+            </form> 
+            <p id="textoPutReserva"></p>
+        </div>
+    </div>
+</div>   
+
+
+    <script src ="user-reservas.js"></script>
+</body>
+</html>

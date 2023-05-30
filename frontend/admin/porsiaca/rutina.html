@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> FRONTEND ADMIN </title>
+</head>
+<body> 
+    <div>
+        <h2>Rutina</h2>
+        <form id="getRutina">
+            <label>GET: </label>
+            <br />
+            <label for="idLineaRutina">ID-Rutina</label>
+            <select id="ID_RUTINAS_GET_RUTINA"></select>
+            <input type="submit" value="Ver" />
+        </form> 
+        <form id="getRutinas">
+            <input type="submit" value="Ver todas las rutinas" />
+          </form>
+        <p id="textoGetRutina"></p>
+        <p id="textoGetRutinas"></p>
+    </div>
+    <div>
+        <form id="postRutina">
+            <label>POST: </label>
+            <br />
+            <label for="id_linea">ID-Linea:</label>
+            <select id="ID_LINEAS_POST_RUTINA"></select>
+            <label for="hora">Hora:</label>
+            <select id="HORA_SALIDA_POST_RUTINA"></select>
+            <label for="id_autobus">ID-Autobus:</label>
+            <select id="ID_AUTOBUS_POST_RUTINA"></select>
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoPostRutina"></p>
+    </div>
+    <div>
+        <form id="putRutina">
+            <label>PUT: </label>
+            <br />
+            <label for="id_rutina">ID-Rutina:</label>
+            <select id="ID_RUTINAS_PUT_RUTINA"></select>
+            <label for="id_linea">ID-Linea:</label>
+            <select id="ID_LINEAS_PUT_RUTINA"></select>
+            <label for="hora">Hora:</label>
+            <select id="HORA_SALIDA_PUT_RUTINA"></select>
+            <label for="id_autobus">ID-Autobus:</label>
+            <select id="ID_AUTOBUS_PUT_RUTINA"></select>
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoPutRutina"></p>
+    </div>
+    <div>
+        <form id="deleteRutina">
+            <label>DELETE: </label>
+            <br />
+            <label for="id_rutina">ID-Rutina:</label>
+            <select id="ID_RUTINAS_DELETE_RUTINA"></select>
+            <input type="submit" value="Enviar" />
+        </form> 
+        <p id="textoDeleteRutina"></p>
+    </div>
+
+    <script src ="admin.js"></script>
+</body>
+</html>
