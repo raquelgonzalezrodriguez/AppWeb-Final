@@ -1,3 +1,7 @@
+function redirectToIndexPage() {
+  window.location.href = "../../index.html";
+};
+
 function desplegableAsientos (campo){
     var select = document.getElementById(campo);
   
