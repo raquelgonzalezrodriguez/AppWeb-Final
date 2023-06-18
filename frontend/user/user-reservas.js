@@ -191,9 +191,9 @@ function redirectToUserPage() {
     fechaMinima.setDate(fechaMinima.getDate() + 1); // Configura la fecha mínima para mañana
     fechaInput.setAttribute("min", fechaMinima.toISOString().split("T")[0]);
   
-    // Configura el atributo "max" en el campo date para establecer la fecha máxima permitida (3 meses desde la fecha actual)
+    // Configura el atributo "max" en el campo date para establecer la fecha máxima permitida (1 mes desde la fecha actual)
     var fechaMaxima = new Date();
-    fechaMaxima.setMonth(fechaMaxima.getMonth() + 3); // Configura la fecha máxima para 3 meses desde la fecha actual
+    fechaMaxima.setMonth(fechaMaxima.getMonth() + 1); // Configura la fecha máxima para 1 mes desde la fecha actual
     fechaInput.setAttribute("max", fechaMaxima.toISOString().split("T")[0]);
   
     // Agrega un evento al campo date para deshabilitar los días no laborables
@@ -241,18 +241,23 @@ function redirectToUserPage() {
   async function moverHistoricoReservas (){
     const reservasDisponibles = await getReservasDisponibles();
     const fechaActual = new Date();
-    const fechaActualISO = formatearFechaActual(fechaActual);
     let transaccionRealizada = false; 
-  
+
+    if(reservasDisponibles.length == undefined){
+      return;
+    };
+      
     reservasDisponibles.forEach(async reserva => {
-      const fechaReservaISO = formatearFechaActual(reserva.FECHA);
-        // La fecha de reserva es anterior a la fecha actual
-      if(fechaReservaISO < fechaActualISO){
-        await deleteReservaVencida(reserva);
-        await postReservaHistorica(reserva);
-        transaccionRealizada = true;
-      };
-    });
+        const fechaReserva = reserva.FECHA;
+
+          // La fecha de reserva es anterior a la fecha actual
+        if(new Date(fechaReserva) < fechaActual){
+          console.log(" entro  ");
+          await deleteReservaVencida(reserva);
+          await postReservaHistorica(reserva);
+          transaccionRealizada = true;
+        };
+      });
     return transaccionRealizada;
   };
   
