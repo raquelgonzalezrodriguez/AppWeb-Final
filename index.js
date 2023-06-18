@@ -59,6 +59,17 @@ async function getAutobusByID(ID_AUTOBUS) {
   return data;
 };
 
+async function ViajeExistente(FECHA) {
+  const response = await fetch(`http://127.0.0.1:3000/admin/viajeexistente/${FECHA}`, {
+    method: 'GET',
+  });
+  if (response.ok) {
+    return true;
+  } else if (response.status === 404) {
+    return false;
+  };
+};
+
 async function getFechaUltimaConexion() {
   const response = await fetch(`http://127.0.0.1:3000/admin/readfechaultimaconexion/1`);
   const data = await response.json();
@@ -99,7 +110,6 @@ async function createViaje(fecha, hora, linea, asientoN, asientoE, asientoSR) {
 async function postViajesNuevos(FECHA_NUEVA){
   // Obtener la fecha actual
   var currentDate = new Date(FECHA_NUEVA);
-  console.log(" CURRENTDATE: "+  currentDate);
 
   var weekdays = [1, 2, 3, 4, 5];
 
@@ -110,8 +120,11 @@ async function postViajesNuevos(FECHA_NUEVA){
    };
   // Recorrer cada día en el rango de fechas
     if (weekdays.includes(currentDate.getDay())) {
-      console.log(" entro en weekdays ");
-
+      
+      if(await ViajeExistente(formatearFecha(currentDate))){
+        //console.log(" el viaje ya existe ");
+        return;
+      };
       // Recorrer cada rutina y crear un viaje para ese día
       for (var i = 0; i < rutinas.length; i++) {
         var rutina = rutinas[i];
@@ -124,17 +137,8 @@ async function postViajesNuevos(FECHA_NUEVA){
         var asientoE = autobus.N_ASIENTOS_ESPECIALES;
         var asientoSR = autobus.N_ASIENTOS_SR;
 
-        console.log("CREATE VIAJE: ");
-        console.log("fecha: "+fecha);
-        console.log("hora: "+hora);
-        console.log("linea: "+linea);
-        console.log("asientoN: "+asientoN);
-        console.log("asientoE: "+asientoE);
-        console.log("asientoSR: "+asientoSR);
-
         // Crear un nuevo objeto de viaje con los datos correspondientes
         await createViaje(fecha, hora, linea, asientoN, asientoE, asientoSR);
-        console.log("viaje creado");
       };
   };
 };
@@ -175,7 +179,7 @@ async function actualizarTablaViajesYFechaUltimaConexion(){
   var fecha_actual = formatearFecha(fecha);
   var ultimaConexion = await getFechaUltimaConexion();
   var fecha_UltimaConexion = formatearFecha(ultimaConexion.FECHA_ULTIMA_CONEXION);
-
+console.log("fecha nueva: "+obtenerFechaNueva());
   if (fecha_actual != fecha_UltimaConexion){
     fecha_UltimaConexion = fecha_actual;
     await actualizarFechaUltimaConexion(fecha_UltimaConexion); //actualizo la fecha en la bbdd para que no vuelva a entrar hasta que no pase 1 o + dias
