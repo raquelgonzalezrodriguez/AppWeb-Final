@@ -107,6 +107,16 @@ label {
     /*display: none;*/
 
 }
+.form-container3 {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 80px;
+    border-radius: 5px;
+    width: 800px;
+    margin: 0 auto;
+    /*display: none;*/
+
+}
 
 .form-container label {
     display: block;
@@ -124,6 +134,15 @@ label {
 }
 
 .form-container input[type="submit"] {
+    background-color: #2fa133;
+    color: white;
+    border: none;
+    width: 97%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form-container2 input[type="submit"] {
     background-color: #2fa133;
     color: white;
     border: none;
