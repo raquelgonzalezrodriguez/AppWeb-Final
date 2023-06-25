@@ -110,7 +110,7 @@ async function createViaje(fecha, hora, linea, asientoN, asientoE, asientoSR) {
 async function postViajesNuevos(FECHA_NUEVA){
   // Obtener la fecha actual
   var currentDate = new Date(FECHA_NUEVA);
-
+console.log("fecha SIN comprobar=== "+currentDate);
   var weekdays = [1, 2, 3, 4, 5];
 
   var rutinas = await getRutinasDisponibles();
@@ -120,7 +120,7 @@ async function postViajesNuevos(FECHA_NUEVA){
    };
   // Recorrer cada día en el rango de fechas
     if (weekdays.includes(currentDate.getDay())) {
-      
+      console.log("fecha CON comprobar=== "+currentDate);
       if(await ViajeExistente(formatearFecha(currentDate))){
         //console.log(" el viaje ya existe ");
         return;
@@ -151,41 +151,91 @@ async function deleteViajesVencidos (FECHA_ANTERIOR){
   return data;
 };
 
-function obtenerFechaAnterior() {
-  var fecha_actual = new Date();
-  fecha_actual.setDate(fecha_actual.getDate() - 1); // Restar un día a la fecha actual
-  return formatearFecha(fecha_actual);
+function obtenerFechaAnterior(conex) {
+  conex.setDate(conex.getDate() - 1); // Restar un día a la fecha actual
+  return conex;
 };
 
-function obtenerFechaNueva() {
-  var fecha_actual = new Date();
-  fecha_actual.setMonth(fecha_actual.getMonth() + 1); // Sumar un mes a la fecha actual
-  fecha_actual.setDate(fecha_actual.getDate() + 1); // Sumar un día a la fecha actual
-  return formatearFecha(fecha_actual);
+function obtenerFechaNueva(conex2) {
+  conex2.setMonth(conex2.getMonth() + 1); // Sumar un mes a la fecha actual
+  conex2.setDate(conex2.getDate() + 1); // Sumar un día a la fecha actual
+  return conex2;
 };
 
-async function actualizarTablaViajes(){
-  // Borrar viajes pasados de fecha
-  var FECHA_ANTERIOR = obtenerFechaAnterior();
-  await deleteViajesVencidos(FECHA_ANTERIOR);
-  // Añadir viajes nuevos
-  var FECHA_NUEVA = obtenerFechaNueva();
-  console.log("Fecha nueva: "+ FECHA_NUEVA);
-  await postViajesNuevos(FECHA_NUEVA);      
+async function actualizarTablaViajes(numero_dias,conex,conex2){
+  var anterior = obtenerFechaAnterior(conex);
+  var nueva = obtenerFechaNueva(conex2);
+  anterior.setDate(anterior.getDate());
+  nueva.setDate(nueva.getDate());
+  console.log("fecha ANTERIOR: "+formatearFecha(anterior));
+  console.log("fecha NUEVA: "+formatearFecha(nueva));
+  var i = 0;
+  while(i < numero_dias){
+    anterior.setDate(anterior.getDate() + 1);
+    nueva.setDate(nueva.getDate() + 1);
+    console.log("fecha ANTERIOR: "+formatearFecha(anterior));
+    console.log("fecha NUEVA: "+formatearFecha(nueva));
+    i++;
+
+    await deleteViajesVencidos(formatearFecha(anterior));
+    await postViajesNuevos(formatearFecha(nueva));  
+  };
 };
 
 async function actualizarTablaViajesYFechaUltimaConexion(){
   var fecha = new Date();
   var fecha_actual = formatearFecha(fecha);
   var ultimaConexion = await getFechaUltimaConexion();
+  var conex = new Date(ultimaConexion.FECHA_ULTIMA_CONEXION);
+  var conex2 = new Date(ultimaConexion.FECHA_ULTIMA_CONEXION);
+
   var fecha_UltimaConexion = formatearFecha(ultimaConexion.FECHA_ULTIMA_CONEXION);
-console.log("fecha nueva: "+obtenerFechaNueva());
+
+/*******************************************************  NUEVO  ********************************************************* */
+  var FECHA_ACTUAL = new Date();
+console.log("fecha actual: "+FECHA_ACTUAL);
+
+FECHA_CONEX = new Date(fecha_UltimaConexion);
+console.log("fecha conex"+FECHA_CONEX);
+
+var RESTA = FECHA_ACTUAL - FECHA_CONEX  ;
+
+// Convierte la diferencia de milisegundos a días
+var numero_dias = Math.floor(RESTA / (1000 * 60 * 60 * 24));
+
+console.log('La diferencia es de ' + numero_dias + ' días.');
+
+/**************************************************************************************************************** */
+
+
+
   if (fecha_actual != fecha_UltimaConexion){
     fecha_UltimaConexion = fecha_actual;
-    await actualizarFechaUltimaConexion(fecha_UltimaConexion); //actualizo la fecha en la bbdd para que no vuelva a entrar hasta que no pase 1 o + dias
-    await actualizarTablaViajes(); // borrar el dia pasado(hoy -1) y meter un dia nuevo (1 mes + 1 dia) -> seria tantos dias como sea la diferencia entre las fechas
+    //await actualizarFechaUltimaConexion(fecha_UltimaConexion); //actualizo la fecha en la bbdd para que no vuelva a entrar hasta que no pase 1 o + dias
+    await actualizarTablaViajes(numero_dias,conex,conex2); // borrar el dia pasado(hoy -1) y meter un dia nuevo (1 mes + 1 dia) -> seria tantos dias como sea la diferencia entre las fechas
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*-------------------- INICIO DE SESION  --------------------*/
