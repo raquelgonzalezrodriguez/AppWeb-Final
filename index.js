@@ -211,27 +211,10 @@ console.log('La diferencia es de ' + numero_dias + ' días.');
 
   if (fecha_actual != fecha_UltimaConexion){
     fecha_UltimaConexion = fecha_actual;
-    //await actualizarFechaUltimaConexion(fecha_UltimaConexion); //actualizo la fecha en la bbdd para que no vuelva a entrar hasta que no pase 1 o + dias
+    await actualizarFechaUltimaConexion(fecha_UltimaConexion); //actualizo la fecha en la bbdd para que no vuelva a entrar hasta que no pase 1 o + dias
     await actualizarTablaViajes(numero_dias,conex,conex2); // borrar el dia pasado(hoy -1) y meter un dia nuevo (1 mes + 1 dia) -> seria tantos dias como sea la diferencia entre las fechas
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
